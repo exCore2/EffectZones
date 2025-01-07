@@ -23,9 +23,14 @@ public class EffectZonesSettings : ISettings
 
     [JsonIgnore]
     public ButtonNode RemoveMatchedUnknownEffects { get; set; } = new ButtonNode();
+    [JsonIgnore]
+    public ButtonNode RemoveAllUnknownEffects { get; set; } = new ButtonNode();
 
     [Menu(null, CollapsedByDefault = true)]
     public ContentNode<TextNode> UnknownEffects { get; set; } = new ContentNode<TextNode>() { UseFlatItems = true, };
+    [Menu(null, CollapsedByDefault = true)]
+    public ContentNode<TextNode> LethalUnknownEffects { get; set; } = new ContentNode<TextNode>() { UseFlatItems = true, };
+    public ToggleNode EnableDebugging { get; set; } = new ToggleNode(false);
 }
 
 public class EntityGroup
@@ -39,4 +44,5 @@ public class EntityGroup
     public RangeNode<float> CustomSize { get; set; } = new RangeNode<float>(1, 0, 100);
     public RangeNode<int> BaseSizeOverride { get; set; } = new RangeNode<int>(0, 0, 2000);
     public ToggleNode IgnoreScale { get; set; } = new ToggleNode(false);
+    public ToggleNode PlayAlert { get; set; } = new ToggleNode(false);
 }
