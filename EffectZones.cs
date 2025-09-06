@@ -62,7 +62,8 @@ public class EffectZones : BaseSettingsPlugin<EffectZonesSettings>
 
     private bool IsMatch(string template, string path)
     {
-        if (string.IsNullOrWhiteSpace(template))
+        if (string.IsNullOrWhiteSpace(template) || 
+            string.IsNullOrWhiteSpace(path))
         {
             return false;
         }
